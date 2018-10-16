@@ -41,13 +41,12 @@ Then, write a function named removeElements that takes in an array and a callbac
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const removeOne = (num, arr) => num % 3 === 2 ? arr.pop : console.log(arr);
+const removeOne = (num, arr) => (num % 3 === 2) ? arr.pop() : console.log('No remainder of 2');
 
 const removeElements = (arr, removeOne) => {
-  // Solution code here...
-  arr.forEach(element => {
-    removeOne(element, arr);
-  });
+  for (let i = 0; i < arr.length; i++) {
+    removeOne(arr[i], arr);
+  }
 
   return arr;
 }
