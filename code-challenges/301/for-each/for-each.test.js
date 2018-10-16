@@ -129,7 +129,6 @@ const fizzbuzz = (arr) => {
       outputArr.push(element);
     }
   });
-
   return outputArr;
 }
 
