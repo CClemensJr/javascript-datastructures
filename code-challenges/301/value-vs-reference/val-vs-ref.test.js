@@ -37,11 +37,7 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
-const addBirthYearProperty = (obj, year) => {
-  //Add a new property to obj call yearBorn
-  // Set the value of yearBord to year
-  obj.yearBorn = year;
-}
+const addBirthYearProperty = (obj, year) => obj.yearBorn = year;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -53,9 +49,7 @@ setStatusAsAuthor(people);
 console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
-const setStatusAsAuthor = (people) => {
-  // Solution code here...
-}
+const setStatusAsAuthor = (people) => people.forEach(person => person.isAuthor = true);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -109,7 +103,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
