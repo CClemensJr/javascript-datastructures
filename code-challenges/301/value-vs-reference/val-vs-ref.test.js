@@ -8,6 +8,10 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
+  const theEnd = ' The end.';
+
+  str = str + theEnd;
+
   return str;
 }
 
