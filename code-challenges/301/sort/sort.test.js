@@ -21,7 +21,7 @@ CHALLENGE 3
 Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortByLength = (arr) => arr.sort((a, b) => a.length > b.length);
+const sortByLength = (arr) => arr.sort((a, b) => a.length > b.length) ;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -29,7 +29,7 @@ Write a function named alphabetizeBetter that takes in an array of strings and r
 For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetizeBetter = (arr) => arr.sort((a, b) => a >= b);
+const alphabetizeBetter = (arr) => arr.sort((a, b) => a.toLowerCase() > b.toLowerCase());
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
