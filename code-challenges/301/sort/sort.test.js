@@ -23,6 +23,7 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => a.lenght > b,length);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,7 +154,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should sort strings by length', () => {
     const ans = sortByLength(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
     expect(ans.slice(0,2)).toStrictEqual(['Zebra', 'carrot']);
