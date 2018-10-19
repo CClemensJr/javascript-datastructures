@@ -26,9 +26,11 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
-};
+  const regex = new RegExp('\\b[A-J][a-z]+', 'g');
+  const _citiesAThruJ = arr.filter(city => regex.test(city));
 
+  return _citiesAThruJ;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 You have created a game application and begin by asking users an easy question: In which month is Halloween?
@@ -107,7 +109,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
