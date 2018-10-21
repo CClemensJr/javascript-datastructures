@@ -69,11 +69,8 @@ The function should return a string containing the consonants in their original 
 For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
-let hangman = (str) => {
-  let regex = /[aeiou]/g;
+let hangman = (str) => str.replace(/[aeiou]/g, '_');
 
-  return str.replace(regex, '_');
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
