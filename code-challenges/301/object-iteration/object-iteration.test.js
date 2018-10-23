@@ -88,7 +88,16 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let numOfKids = 0;
+  let hasKids = false;
+
+  for (let person of arr) {
+    (person.name === character) ? numOfKids += person.children.length : console.log(`Person ${person.name} is not  the character ${character}`);
+  }
+  
+  (numOfKids > 0) ? hasKids = true : console.log('Had no kids');
+
+  return hasKids;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +107,7 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -158,7 +167,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
