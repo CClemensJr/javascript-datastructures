@@ -62,9 +62,7 @@ let characters = [
   }
 ]
 
-const totalCharacters = (arr) => {
-  // Solution code here...
-}
+const totalCharacters = (arr) => arr.length;
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -144,7 +142,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('something specific', () => {
     expect(totalCharacters(characters)).toStrictEqual(7);
   });
