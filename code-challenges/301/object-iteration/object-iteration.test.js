@@ -2,7 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
-Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object. 
+Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object.
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
 const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
@@ -82,21 +82,21 @@ const getHouses = (arr) => {
 CHALLENGE 4
 Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
 This function should take in an array of data and a character name and return a Boolean.
-For example: 
-hasChildrenValues(characters, 'Sansa') will return true 
+For example:
+hasChildrenValues(characters, 'Sansa') will return true
 hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  let numOfKids = 0;
-  let hasKids = false;
+  let hasKids = true;
 
   for (let person of arr) {
-    (person.name === character) ? numOfKids += person.children.length : console.log(`Person ${person.name} is not  the character ${character}`);
-  }
-  
-  (numOfKids > 0) ? hasKids = true : console.log('Had no kids');
+    let personVals = Object.values(person);
 
+    if (personVals[0] === character) {
+      (personVals[2].length > 0) ? hasKids = true : hasKids = false;
+    }
+  }
   return hasKids;
 }
 
@@ -107,7 +107,7 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -177,7 +177,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
