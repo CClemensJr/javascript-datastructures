@@ -58,11 +58,13 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 const evenOdd = (arr) => {
   // Solution code here...
   return arr.map(num => {
-    console.log(typeOf num);
-    if (num % 2 === 0) {
-      return 'even';
-    } else if (num % 2 !== 0) {
-      return 'odd';
+    if (typeof(num) === 'number')
+    {
+      if (num % 2 === 0) {
+        return 'even';
+      } else if (num % 2 !== 0) {
+        return 'odd';
+      }
     } else {
       return 'N/A';
     }
