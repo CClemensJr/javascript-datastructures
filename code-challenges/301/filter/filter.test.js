@@ -16,10 +16,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 ------------------------------------------------------------------------------------------------ */
 
 
-const filterStringsWithVowels = (arr) => {
-  // Solution code here...
-  return arr.filter(val => val.match(/a|e|i|o|u/g));
-};
+const filterStringsWithVowels = (arr) => arr.filter(val => val.match(/a|e|i|o|u/g));
 
 
 /* ------------------------------------------------------------------------------------------------
