@@ -72,7 +72,7 @@ Write a function named getStatName that is an extension of your getBaseStatGreat
 For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 'special-attack'].
 ------------------------------------------------------------------------------------------------ */
 
-const getStatName = (arr, minBaseStat) => arr.filter(obj => (obj.baseStat > minBaseStat) ? obj.stat.name : console.log('Not valid'));
+const getStatName = (arr, minBaseStat) => arr.filter(obj => (obj.baseStat > minBaseStat) ? arr.map(obj.stats.name) : console.log('Not Valid'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -200,7 +200,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
