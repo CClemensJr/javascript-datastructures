@@ -6,16 +6,8 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => arr.reduce((acc, cur, idx) => acc += 1, 0);//{
-//   // Solution code here...
-//   return arr.reduce((accumulator, num, idx) => {
-//     console.log(`Accumulator: ${accumulator}        num: ${num}`);
-//     accumulator = accumulator + idx;
+const countNumberOfElements = (arr) => arr.reduce((acc, cur, idx) => acc += 1, 0);
 
-//     console.log(`Accumulated: ${accumulator}`);
-//     return accumulator;
-//   }, );
-// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -74,6 +66,11 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  return arr.reduce((acc, cur, idx) => {
+    console.log(`ACCUMULATOR: ${acc} ||  CURRENT VALUE: ${cur}  ||  INDEX: ${idx}`);
+    acc[idx] = cur.name;
+    return acc;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -232,7 +229,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array continaing the names of the characters', () => {
     expect(returnNames(starWarsData)).toStrictEqual([ 'Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa' ]);
     expect(returnNames(starWarsData).length).toStrictEqual(5);
