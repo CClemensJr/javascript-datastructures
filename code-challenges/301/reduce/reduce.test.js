@@ -6,9 +6,16 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
-};
+const countNumberOfElements = (arr) => arr.reduce((acc, cur, idx) => acc += 1, 0);//{
+//   // Solution code here...
+//   return arr.reduce((accumulator, num, idx) => {
+//     console.log(`Accumulator: ${accumulator}        num: ${num}`);
+//     accumulator = accumulator + idx;
+
+//     console.log(`Accumulated: ${accumulator}`);
+//     return accumulator;
+//   }, );
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
