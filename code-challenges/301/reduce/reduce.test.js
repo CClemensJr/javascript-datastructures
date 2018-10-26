@@ -125,14 +125,7 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
-  // Solution code here...
-  return arr.reduce((totalChildren, character, idx) => {
-    // console.log(`Total Children: ${totalChildren}  ||  Character: ${character.name}  ||  Children: ${character.children}  ||  Index: ${idx}`);
-    return (character.children) ? totalChildren + character.children.length : totalChildren + 0;
-
-  }, 0);
-};
+const countNumberOfChildren = (arr) => arr.reduce((totalChildren, character, idx) => (character.children) ? totalChildren + character.children.length : totalChildren + 0, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
