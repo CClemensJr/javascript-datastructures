@@ -25,17 +25,20 @@ const count = (target, input) => {
 
 
   // FILTER
-  //input.filter(arr => arr.filter(num => num === target));
-  input.filter(arr => {
-    arr.filter(num => {
-      if (num === target) timesPresent += 1;
-    });
-  });
+  // input.filter(arr => {
+  //   arr.filter(num => {
+  //     if (num === target) timesPresent += 1;
+  //   });
+  // });
 
   //console.log(input.filter(arr => arr.includes(target)));
-  // REDUCE
 
-  return timesPresent;
+  // REDUCE
+  return input.reduce((acc, cur, idx) => {
+    console.log(`ACC: ${acc} || CUR: ${cur} || IDX: ${idx}`)
+  });
+
+  // return timesPresent;
 };
 
 /* ------------------------------------------------------------------------------------------------
