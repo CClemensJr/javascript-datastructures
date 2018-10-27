@@ -56,18 +56,19 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = (input) => {
-  // Solution code here...
-  let totalSum = input.reduce((tSum, tCur) => {
-    tSum += tCur.reduce((aSum, aCur) => {
-      return aSum += aCur;
-    }, 0);
+const totalSum = (input) => input.reduce((tSum, tCur) => tSum += tCur.reduce((aSum, aCur) => aSum += aCur, 0), 0);
 
-    return tSum;
-  }, 0);
+// const totalSum = (input) => {
+//   let totalSum = input.reduce((tSum, tCur) => {
+//     tSum += tCur.reduce((aSum, aCur) => {
+//       return aSum += aCur;
+//     }, 0);
 
-  return totalSum
-};
+//     return tSum;
+//   }, 0);
+
+//   return totalSum
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
