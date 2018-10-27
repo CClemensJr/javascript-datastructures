@@ -25,20 +25,25 @@ const count = (target, input) => {
 
 
   // FILTER
-  // input.filter(arr => {
-  //   arr.filter(num => {
-  //     if (num === target) timesPresent += 1;
-  //   });
-  // });
-
-  //console.log(input.filter(arr => arr.includes(target)));
-
-  // REDUCE
-  return input.reduce((acc, cur, idx) => {
-    console.log(`ACC: ${acc} || CUR: ${cur} || IDX: ${idx}`)
+  input.filter(arr => {
+    arr.filter(num => {
+      if (num === target) timesPresent += 1;
+    });
   });
 
-  // return timesPresent;
+  // REDUCE
+  // return input.reduce((acc, cur, idx) => {
+  //   console.log(`ACC: ${acc} || CUR: ${cur} || IDX: ${idx}`);
+  //   cur.reduce((acc1, cur1, idx1) => {
+  //     console.log(`ACC: ${acc1} || CUR: ${cur1} || IDX: ${idx1}`);
+  //     if (cur1 === target) acc1 += cur1;
+  //     return acc += acc1;
+  //   }, 0);
+
+  //   return acc;
+  // }, 0);
+
+  return timesPresent;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,6 +58,15 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let totalSum = input.reduce((tSum, tCur) => {
+    tSum += tCur.reduce((aSum, aCur) => {
+      return aSum += aCur;
+    }, 0);
+
+    return tSum;
+  }, 0);
+
+  return totalSum
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -170,7 +184,7 @@ describe('Testing challenge 1', () => {
   })
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add all the numbers in the arrays', () => {
     const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
 
