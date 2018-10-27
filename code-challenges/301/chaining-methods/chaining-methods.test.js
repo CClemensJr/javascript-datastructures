@@ -12,22 +12,30 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // MAP
   let timesPresent = 0;
 
-  input.map(arr => {
-    if (arr.includes(target)) {
-      arr.map(num => {
-        if (num === target) timesPresent += 1;
-      });
-    }
-  });
+  // MAP
+  // input.map(arr => {
+  //   if (arr.includes(target)) {
+  //     arr.map(num => {
+  //       if (num === target) timesPresent += 1;
+  //     });
+  //   }
+  // });
 
-  return timesPresent;
 
   // FILTER
+  //input.filter(arr => arr.filter(num => num === target));
+  input.filter(arr => {
+    arr.filter(num => {
+      if (num === target) timesPresent += 1;
+    });
+  });
 
+  //console.log(input.filter(arr => arr.includes(target)));
   // REDUCE
+
+  return timesPresent;
 };
 
 /* ------------------------------------------------------------------------------------------------
