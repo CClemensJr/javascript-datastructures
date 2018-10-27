@@ -135,7 +135,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
-};
+  return arr.reduce((avgVal, curVal, idx) => {
+    console.log(`AVG VAL: ${avgVal} || curVal: ${curVal} || IDX: ${idx}`);
+    avgVal = avgVal + curVal;
+    return avgVal / arr.length;
+  }, { count: 0, sum: 0 });
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
