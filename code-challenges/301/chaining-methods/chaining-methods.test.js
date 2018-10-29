@@ -58,17 +58,6 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => input.reduce((tSum, tCur) => tSum += tCur.reduce((aSum, aCur) => aSum += aCur, 0), 0);
 
-// const totalSum = (input) => {
-//   let totalSum = input.reduce((tSum, tCur) => {
-//     tSum += tCur.reduce((aSum, aCur) => {
-//       return aSum += aCur;
-//     }, 0);
-
-//     return tSum;
-//   }, 0);
-
-//   return totalSum
-// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -83,7 +72,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  // Remove non nums or nums % 5 !== 0
+  input.map(arr => {
+    arr.map(num => {
+      if (num.length) {
+        arr.shift();
+      }
+    });
+    console.log(arr);
+  });
+  // Raise 2 to the power of the resulting numbers (Math.pow(2, resulting nums))
+  // Return an array of arrays
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -193,7 +192,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', () => {
     expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
   });

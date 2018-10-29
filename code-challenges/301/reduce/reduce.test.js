@@ -75,7 +75,9 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (arr) => arr.split('').reduce((aString, aLetter, idx) => aLetter + aString, '');
+const reversedString = (arr) => arr.split('').reduce((aString, aLetter, idx) => {
+  return aLetter + aString;
+}, '');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -239,13 +241,13 @@ describe('Testing challenge 3', () => {
   });
 });
 
-describe('Testing challenge 4', () => {
+xdescribe('Testing challenge 4', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-describe('Testing challenge 5', () => {
+xdescribe('Testing challenge 5', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
