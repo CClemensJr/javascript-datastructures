@@ -62,9 +62,7 @@ const errands = [
   }
 ]
 
-const howManyTreats = (arr) => {
-  // Solution code here...
-}
+const howManyTreats = (arr) => arr[2].items[1].quantity;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -150,7 +148,7 @@ Run your tests from the console: jest challenge-12.test.js
 ------------------------------------------------------------------------------------------------ */
 
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should add the hourly totals array', () => {
     expect(grandTotal(cookieStores)).toStrictEqual([88, 153, 252, 286, 139, 161, 145, 232, 276, 207, 161, 169]);
   });
@@ -178,7 +176,7 @@ xdescribe('Testing challenge 2', () => {
 });
 
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return the number 24', () => {
     expect(howManyTreats(errands)).toStrictEqual(24);
   });
