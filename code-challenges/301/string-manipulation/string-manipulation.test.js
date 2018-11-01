@@ -16,7 +16,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 
 const findHappiness = (arr) => {
   const newArr = [];
-  
+
   arr.forEach(str => {
     if (str.includes(':)')) newArr.push(str);
   });
@@ -31,8 +31,14 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  const regex = /\s|(\(|\)|-)/g;
+
+  arr.forEach(str => {
+    newArr.push(str.replace(regex, ''));
+  });
   
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
