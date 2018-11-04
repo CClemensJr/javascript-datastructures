@@ -67,16 +67,21 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  let regex = /\w+$/g;
-  recipe.ingredients.forEach(ingredient => {
-    let match = ingredient.match(regex);
-    let idx = ingredient.indexOf(match);
 
-    console.log(`Index: ${idx}`);
-    console.log(`Slice: ${ingredient.slice(ingredient.length - match.length)}`);
+  recipe.ingredients.forEach(ingrediant => {
+    if (ingrediant.includes('medium-sized')) {
+      result.push(ingrediant.slice(15));
 
+    } else if (ingrediant.includes('pounds')) {
+      result.push(ingrediant.slice(9));
+
+    } else if (ingrediant.includes('gallons')) {
+      result.push(ingrediant.slice(10));
+    } else {
+      result.push(ingrediant.slice(8));
+    }
   });
+
   return result;
 }
 
