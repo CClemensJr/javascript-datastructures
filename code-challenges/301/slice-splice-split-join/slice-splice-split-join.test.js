@@ -67,16 +67,21 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  let regex = /\w+$/g;
-  recipe.ingredients.forEach(ingredient => {
-    let match = ingredient.match(regex);
-    let idx = ingredient.indexOf(match);
 
-    console.log(`Index: ${idx}`);
-    console.log(`Slice: ${ingredient.slice(ingredient.length - match.length)}`);
+  recipe.ingredients.forEach(ingrediant => {
+    if (ingrediant.includes('medium-sized')) {
+      result.push(ingrediant.slice(15));
 
+    } else if (ingrediant.includes('pounds')) {
+      result.push(ingrediant.slice(9));
+
+    } else if (ingrediant.includes('gallons')) {
+      result.push(ingrediant.slice(10));
+    } else {
+      result.push(ingrediant.slice(8));
+    }
   });
+
   return result;
 }
 
@@ -87,8 +92,14 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
+  let result = []
+  
+  recipe.ingredients.forEach(ingrediant => {
+    let ingrediantArr = ingrediant.split(' ');
+
+    result.push(ingrediantArr.slice(2).join(' '));
+  });
+
   return result;
 }
 
@@ -101,7 +112,9 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  
+  recipe.steps.forEach(action => result.push(action.split(' ')[0]));
+  
   return result;
 }
 
@@ -116,7 +129,14 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for(let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      arr.splice(i, 1)
+
+    }
+  }
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -200,20 +220,20 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
